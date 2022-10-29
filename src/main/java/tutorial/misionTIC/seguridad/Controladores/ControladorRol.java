@@ -1,5 +1,4 @@
 package tutorial.misionTIC.seguridad.Controladores;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -40,7 +39,6 @@ public class ControladorRol {
                 .orElse(null);
         if (rolActual!=null){
             rolActual.setNombre(infoRol.getNombre());
-            rolActual.setDescripcion(infoRol.getDescripcion());
             return this.miRepositorioRol.save(rolActual);
         }else{
             return  null;
