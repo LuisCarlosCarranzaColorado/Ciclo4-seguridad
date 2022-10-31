@@ -39,6 +39,7 @@ public class ControladorRol {
                 .orElse(null);
         if (rolActual!=null){
             rolActual.setNombre(infoRol.getNombre());
+            rolActual.setDescripcion(infoRol.getDescripcion());
             return this.miRepositorioRol.save(rolActual);
         }else{
             return  null;
