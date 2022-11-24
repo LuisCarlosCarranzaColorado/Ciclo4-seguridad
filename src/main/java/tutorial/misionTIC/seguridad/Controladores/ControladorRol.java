@@ -8,10 +8,10 @@ import tutorial.misionTIC.seguridad.Repositorios.RepositorioRol;
 import java.util.List;
 
 @CrossOrigin
-@RestController
-@RequestMapping("/roles")
+@RestController//CRUD
+@RequestMapping("/roles")//SUBRUTAS DE ACCESO-METODOS
 public class ControladorRol {
-    @Autowired
+    @Autowired//DEPENDENCIAS--SETTER-CONSTRUCTOR
     private RepositorioRol miRepositorioRol;
 
 

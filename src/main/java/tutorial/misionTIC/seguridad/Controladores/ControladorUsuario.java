@@ -101,13 +101,14 @@ public class ControladorUsuario {
                             final HttpServletResponse response) throws IOException {
         Usuario usuarioActual=this.miRepositorioUsuario
                 .getUserByEmail(infoUsuario.getCorreo());
-        if (usuarioActual!=null &&
-                usuarioActual.getContrasena().equals(convertirSHA256(infoUsuario.getContrasena()))) {
-            usuarioActual.setContrasena("");
+        if (usuarioActual!=null && usuarioActual.getContrasena().equals(convertirSHA256(infoUsuario.getContrasena())))
+            {
+            usuarioActual.setContrasena("****");
             return usuarioActual;
-        }else{
+            }else
+            {
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
             return null;
-        }
+            }
     }
 }
